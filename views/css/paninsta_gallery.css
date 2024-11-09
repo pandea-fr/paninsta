@@ -1,0 +1,19 @@
+.paninsta-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 520px; /* Ajouté pour limiter la hauteur */
+    overflow: hidden; /* Ajouté pour cacher les images supplémentaires */
+}
+
+.paninsta-photo {
+    flex: 1 1 calc(33.33% - 10px);
+    box-sizing: border-box;
+}
+
+.paninsta-photo img {
+    width: 100%;
+    height: 100%; /* Modifié pour que les images remplissent le conteneur */
+    object-fit: cover; /* Ajouté pour rognage */
+    display: block;
+}
