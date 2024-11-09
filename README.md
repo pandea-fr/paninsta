@@ -1,2 +1,2 @@
 # paninsta
-Affihce une galerie photo instagram
+Affichage une galerie photo instagram
