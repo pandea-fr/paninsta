@@ -41,7 +41,7 @@ class Paninsta extends Module
         return (
             parent::install() &&
             $this->registerHook('displayHome') &&
-            Configuration::updateValue($this->configToken, 'instagram_url')  &&
+            Configuration::updateValue($this->configToken, 'past instagram token here')  &&
             Configuration::updateValue($this->configPhotoOnly, true)  &&
             Configuration::updateValue($this->configPhotoMax, 3)
         ); 
