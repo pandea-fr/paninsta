@@ -92,6 +92,7 @@ class Paninsta extends Module
     {
         $accessToken = Configuration::get($this->configToken); // Récupération du jeton d'accès
         $limit = Configuration::get($this->configPhotoMax)*2; // Limite du nombre de photos à récupérer
+        $photoOnly = Configuration::get($this->configPhotoOnly); // Ne prendre que les photos
         // URL de l'API Instagram pour récupérer les photos
         $url = "https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token={$accessToken}&limit={$limit}";
         $photos = []; // Tableau pour stocker les photos
@@ -105,7 +106,9 @@ class Paninsta extends Module
             if (isset($data['data'])) {
                 // if $data['media_url'] contient le text "/reel/" alors on ne l'ajoute pas aux photos
                 foreach ($data['data'] as $key => $value) {
-                    if (strpos($value['permalink'], '/reel/') === false) {
+                    if ($photoOnly && strpos($value['permalink'], '/reel/') === false) {
+                        $photos[] = $value;
+                    } elseif (!$photoOnly) {
                         $photos[] = $value;
                     }
                 }

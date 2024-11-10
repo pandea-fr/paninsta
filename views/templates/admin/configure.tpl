@@ -6,8 +6,8 @@
     <div class="form-group">
     <label for="{$config_name_photo_only}">Afficher seulement les photos</label>
     <select name="{$config_name_photo_only}" class="form-control">
-        <option value="yes" {if $paninsta_photo_only == "1"} selected {/if}>Oui</option>
-        <option value="no" {if paninsta_photo_only == '0'} selected {/if} >Non</option>
+        <option value="1" {if $paninsta_photo_only == "1"} selected {/if}>Oui</option>
+        <option value="0" {if $paninsta_photo_only == '0'} selected {/if} >Non</option>
     </select>
     </div>
     <div class="form-group">
